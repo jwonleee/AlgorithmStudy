@@ -7,9 +7,6 @@ import chap04_1.IntQueue.OverflowIntQueueException;
 
 public class IntQueueTester {
 
-	
-	
-	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		IntQueue s = new IntQueue(64); //최대 64를 인큐할 수 있는 큐

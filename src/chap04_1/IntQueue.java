@@ -82,6 +82,18 @@ public class IntQueue {
 		return -1; //실패
 	}
 	
+	//임의의 데이터 검색 (검색 실패시 0, 프런트에 있는 경우 1)
+	public int search(int x) {
+		for(int i = 1; i <= num; i++) {
+			int idx = (i + front) % max;
+			
+			if(que[idx] == x) {
+				return i;
+			}
+		}
+		return 0; //검색 실패
+	}
+	
 	//큐 안의 모든 데이터를 출력, front → rear 순서
 	public void dump() {
 		if(num <= 0) {			
@@ -91,8 +103,7 @@ public class IntQueue {
 				System.out.print(que[(i + front) % max] + "");
 				System.out.println();
 			}
-		}
-		
+		}	
 	}
 	
 	public void clear() {

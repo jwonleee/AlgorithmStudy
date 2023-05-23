@@ -1,4 +1,4 @@
-package chap04_1;
+package chap05_2;
 
 public class IntStack {
 
@@ -21,7 +21,7 @@ public class IntStack {
 	//생성자
 	public IntStack(int capacity) {
 		max = capacity;
-		ptr = 0; //데이터의 개수
+		ptr = 0;
 		try {
 			stk = new int[max];	//스택 본체용 배열을 max 길이 맞춰서 생성		
 		} catch (Exception e) { //생성할 수 없음
