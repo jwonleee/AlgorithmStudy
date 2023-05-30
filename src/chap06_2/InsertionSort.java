@@ -19,16 +19,17 @@ public class InsertionSort {
 	
 	//for - while 사용
 	static void insertionSort (int[] a, int n) {
-		for(int i = 1; i < n; i++) {
+		for(int i = 1; i < n; i++) { //0번 인덱스는 이미 정렬이 되어있다고 가정, 1번부터 삽입될 값임
 			int key = a[i]; //key값에다가 정렬되지 않은 맨 앞의 인덱스를 넣어줌
-			int j = i-1; //j는 정렬된 inner loop에서 사용
+			
+			int j = i; //j는 정렬된 inner loop에서 사용
 			//여기서 계속 오른쪽으로 밀어내면서 확인하게 됨
-			while(j >= 0 && a[j] > key) { //앞에 있는 정렬된 a[j]가 정렬되지 않은 뒤의 key값보다 크면 inner loop로 들어감
-				a[j+1] = a[j];
+			while(j > 0 && a[j-1] > key) { //앞에 있는 정렬된 a[j-1]가 정렬되지 않은 뒤의 key값보다 크면 inner loop로 들어감
+				a[j] = a[j-1];
 				j--;
 			}
 			
-			a[j+1] = key;
+			a[j] = key;
 		}
 	}
 	
