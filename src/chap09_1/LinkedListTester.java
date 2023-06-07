@@ -110,6 +110,7 @@ public class LinkedListTester {
 		return Menu.MenuAt(key);
 	} //end 메뉴 선택
 
+	
 	//main
 	public static void main(String[] args) {
 		Menu menu; //메뉴
