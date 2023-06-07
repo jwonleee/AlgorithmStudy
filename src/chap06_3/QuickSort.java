@@ -29,8 +29,8 @@ public class QuickSort {
 		System.out.printf("\npivot = %d \n", a[pivot]); //피봇 확인 출력문
 		
 		while(i <= j) { //i와 j가 교차될 때까지
-			while(i <= last && a[i] <= a[pivot]) i++; //i가 마지막까지, 피봇보다 작으면 i인덱스 증가
-			while(j > first && a[j] >= a[pivot]) j--; //j가 첫번째까지, 피봇보다 크면 j 인덱스 감소
+			while(a[i] <= a[pivot]) i++; //i가 마지막까지, 피봇보다 작으면 i인덱스 증가
+			while(a[j] >= a[pivot]) j--; //j가 첫번째까지, 피봇보다 크면 j 인덱스 감소
 				if(i > j) { //i와 j가 교차될 때
 					swap(a, pivot, j); //j를 기준으로 피봇과 swap
 				} else { //i <= j 일 때(정상적일 때 멈춰있다면)

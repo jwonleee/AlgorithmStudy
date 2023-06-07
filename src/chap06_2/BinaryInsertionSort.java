@@ -26,7 +26,7 @@ public class BinaryInsertionSort {
 	}
 	
 	private static int binarySearch(int[] a, int i, int i2, int tmp) {
-		int mid;
+		return 0;
 
 	}
 
