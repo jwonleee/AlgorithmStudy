@@ -1,4 +1,4 @@
-package chap09_1;
+package chap09_2;
 
 import java.util.Comparator;
 
@@ -57,6 +57,7 @@ public class LinkedList<E> {
 				} else { pre = ptr2; }
 			}
 			
+			//여기 뭘까..
 			if(count == 0) { //같은 노드가 없으면
 				ptr = ptr.next;
 			} else { //같은 노드가 있었으면

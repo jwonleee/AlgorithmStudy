@@ -22,10 +22,10 @@ public class LinkedListTester {
 		}
 
 		//데이터를 입력합니다.
-		void scanData(String guide, int sw) {
+		void scanData(String guide, int sw) { //sw가 숫자이긴함
 			System.out.println(guide + "할 데이터를 입력하세요.");
 
-			if((sw & NO) == NO) { //?????????숫자를 넣는건 알겠는데 sw & NO는 몰까?
+			if((sw & NO) == NO) { //비트 연산자
 				System.out.print("번호: ");
 				no = scan.nextInt();
 			}
@@ -69,7 +69,10 @@ public class LinkedListTester {
 		SEARCH_NAME("이름으로 검색     "),
 		NEXT("선택 노드로 이동"),
 		PRINT_CRNT("선택 노드를 출력  "),
+		RETIREVE("n개 뒤의 노드를 출력"),
 		DUMP("모든 노드를 출력 "),
+		PURGE_NO("같은 번호 노드 삭제"),
+		PURGE_NAME("같은 이름 노드 삭제"),
 		TERMINATE("종료");
 
 		private final String message; //출력할 문자열
@@ -77,7 +80,6 @@ public class LinkedListTester {
 		//서수가 idx인 열거를 반환
 		static Menu MenuAt(int idx) {
 			for(Menu m : Menu.values())
-				if(m.ordinal() == idx)
 					return m;
 			return null;
 		}
@@ -173,6 +175,16 @@ public class LinkedListTester {
 			case PRINT_CRNT : //선택 노드의 데이터를 출력
 				list.printCurrentNode();
 				break;
+				
+			case RETIREVE : //n개 뒤의 노드 데이터를 출력(스캐너로 n 받기)
+				System.out.print("머리부터 몇 번 째: ");
+				int no = scan.nextInt();
+				ptr = list.retireve(no);
+				if(ptr == null)
+					System.out.println("데이터가 없습니다.");
+				else
+					System.out.print("n번째 뒤의 데이터는 " + ptr.toString() + "입니다.");
+				break;
 
 			case DUMP : //모든 노드를 리스트 순서로 출력
 				list.dump();
@@ -181,9 +193,18 @@ public class LinkedListTester {
 			case CLAER : //모든 노드 삭제
 				list.clear();
 				break;
+			
+			case PURGE_NO : //같은 번호의 노드 모두 삭제
+				list.purge(Data.NO_ORDER);
+				break;
+				
+			case PURGE_NAME : //같은 이름의 노드 모두 삭제
+				list.purge(Data.NAME_ORDER);
+				break;
 				
 			}
 		} while (menu != Menu.TERMINATE);
 	} //end main
 
+	
 }
