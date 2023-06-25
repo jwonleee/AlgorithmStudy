@@ -60,7 +60,7 @@ public class AryLinkedList<E> {
 		
 		//삭제할 노드의 인덱스를 free 리스트에 등록
 		private void deleteIndex(int idx) {
-			if(deleted == NULL) { //deletd가 가리키는 노드 없음
+			if(deleted == NULL) { //deleted가 가리키는 노드 없음
 				deleted = idx; //idx를 free 리스트의
 				n[idx].dnext = NULL; //머리에 등록 = n[idx]의 다음 노드를 가리키는 포인터가 null 값을 가짐
 			} else {
