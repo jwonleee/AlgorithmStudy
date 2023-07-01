@@ -84,17 +84,20 @@ class Quiz3 {
 		Data ptr; // 검색용 데이터 참조
 		Data temp = new Data(); // 입력 받기용 데이터
 
+		//기존에는 자연 순서로 판단해서 아래처럼 BinTree 객체 생성 후 사용
+		//BinTree<Integer, Data> tree = new BinTree<Integer, Data>();
+		
+		//compare 메서드를 구현한 클래스 작성 - 내림차순
 		class IntegerDecComparator implements Comparator<Integer> {
 			public int compare(Integer n1, Integer n2) {
 				return (n1 > n2) ? 1 : (n1 < n2) ? -1 : 0;
 			}
 		}
 
+		//IntegerDecComparator 인스턴스 생성
 		// 정수의 내림차순으로 순서매기기를 수행하는 comparator
 		final IntegerDecComparator INT_DEC_COMP = new IntegerDecComparator();
 		BinTree<Integer, Data> tree = new BinTree<Integer, Data>(INT_DEC_COMP);
-
-		//BinTree<Integer, Data> tree = new BinTree<Integer, Data>();
 
 		do {
 			switch (menu = SelectMenu()) {
