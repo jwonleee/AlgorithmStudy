@@ -72,7 +72,7 @@ public class Gstack<E> {
 	}
 	
 	public boolean isEmpty() {
-		return ptr <= 0; //비어있으면 false
+		return ptr <= 0;
 	}
 	
 	public boolean isFull() {

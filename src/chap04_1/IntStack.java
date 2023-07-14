@@ -3,7 +3,8 @@ package chap04_1;
 public class IntStack {
 
 	private int max; //스택 용량, 배열 길이
-	private int ptr; //스택 포인터, 현재 쌓여 있는 데이터의 수(인덱스가 아님)
+	private int ptr; //스택 포인터, 현재 스택의 상태로 다음에 저장될 데이터의 인덱스를 가리킴
+	//스택의 맨 위(꼭대기)에 위치한 데이터를 가리키는 것이 아니라, 비어있는 공간을 가리키는 것
 	private int[] stk; //스택 본체
 	//실제로는 본체를 참조하는 배열 변수로 배열 본체는 생성자에서 생성함
 	
@@ -77,7 +78,7 @@ public class IntStack {
 	
 	//스택이 비어있는가?
 	public boolean isEmpty() {
-		return ptr <= 0; //스택이 비어있으면 false
+		return ptr <= 0;
 	}
 	
 	//스택이 가득 찼는가?
